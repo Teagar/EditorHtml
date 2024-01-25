@@ -30,8 +30,8 @@ Just an HTML editor.
 ## Functionalities
 
 
-- [ ] View Text
-- [ ] Write Text
+- [x] View Text
+- [x] Write Text
 - [x] GUI Visualization
 - [ ] Documentation
 
