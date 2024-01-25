@@ -30,7 +30,7 @@ namespace EditorHtml
       } while (Console.ReadKey().Key != ConsoleKey.Escape);
 
       Console.WriteLine("--------------------------");
-      Console.WriteLine("  Do U want save the archive? [y/n]");
+      Viewer.ViewerMode(file.ToString());
     }
 
     public static void EditMode()
