@@ -13,6 +13,9 @@ namespace EditorHtml
       Console.BackgroundColor = ConsoleColor.Blue;
       Console.ForegroundColor = ConsoleColor.Black;
       DrawScreen();
+      short option = 0;
+      Int16.TryParse(Console.ReadLine(), out option);
+      HandleMenuOption(option);
     }
 
     public static void DrawScreen()
@@ -20,11 +23,15 @@ namespace EditorHtml
       
       BuildCanvas(30, 12);
       WriteOptions();
-      short option = 0;
-      Int16.TryParse(Console.ReadLine(), out option);
     }
 
-    public static void BuildCanvas(int x, int y, char separator = '+', char line = '-', char column = '|')
+    public static void BuildCanvas(
+        int x,
+        int y,
+        char separator = '+',
+        char line = '-',
+        char column = '|')
+
     {
 
       void BuildX()
@@ -78,6 +85,20 @@ namespace EditorHtml
 
       Console.SetCursorPosition(3, 11);
       Console.Write("Option: ");
+    }
+
+    public static void HandleMenuOption(short option)
+    {
+      
+      switch(option)
+      {
+
+        case 0: Environment.Exit(0); break;
+        // case 1: Open(); break;
+        case 2: Editor.View(); break;
+        // case 3: Write(); break;
+        default: Show(); break;
+      }
     }
 
   }
